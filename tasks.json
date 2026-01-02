@@ -11,7 +11,7 @@
       "id": 2,
       "title": "Finish report",
       "description": "Complete the quarterly report",
-      "completed": false,
+      "completed": true,
       "created_at": "2026-01-02T03:47:32.375137"
     },
     {
@@ -27,7 +27,21 @@
       "description": "This task has been updated for review",
       "completed": true,
       "created_at": "2026-01-02T05:36:49.870878"
+    },
+    {
+      "id": 6,
+      "title": "New",
+      "description": "Interactive Task This is a test task for the interactive mode",
+      "completed": false,
+      "created_at": "2026-01-02T12:58:30.900399"
+    },
+    {
+      "id": 7,
+      "title": "buy ticket",
+      "description": "for pak vs ind match",
+      "completed": false,
+      "created_at": "2026-01-02T13:13:50.556218"
     }
   ],
-  "next_id": 6
+  "next_id": 8
 }
