@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m src.todo_app.cli.main list-tasks --completed)"
+    ]
+  }
+}

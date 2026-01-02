@@ -1,55 +1,53 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version change: 1.0.0 → 1.1.0
+Modified principles:
+- Added I. In-Memory Storage (new)
+- Added III. Test-First (new)
+- Added IV. Clean Code & Modularity (new)
+- Added V. Spec-Driven Development (new)
+- Added VI. Dependency Management (new)
+- Updated II. CLI Interface with specific requirements
+Added sections: Additional Constraints, Development Workflow
+Removed sections: None
+Templates requiring updates:
+- .specify/templates/plan-template.md ⚠ pending
+- .specify/templates/spec-template.md ⚠ pending
+- .specify/templates/tasks-template.md ⚠ pending
+- .specify/templates/commands/*.md ⚠ pending
+Follow-up TODOs: None
+-->
+
+# Todo In-Memory Python Console Application Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. In-Memory Storage
+All task data must be stored strictly in memory with no persistence to disk or database. The system must reset all data when the application terminates. This ensures simplicity and local execution without external dependencies.
+<!-- Storage: In-memory only (no persistence) -->
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. CLI Interface
+The application must be executed as a command-line program running locally in a terminal environment. The console user interface must use Typer for CLI command handling and Rich for enhanced terminal output including colored messages and table-based task listings. The application must remain a pure console-based application with no web frameworks, APIs, or external services.
+<!-- CLI: Typer for commands, Rich for formatting, Console-only execution -->
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First
+All components must have unit tests written first following TDD principles. Tests must be written before implementation, with tests failing → implementation → then passing (Red-Green-Refactor cycle). All functionality must be independently testable.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Clean Code & Modularity
+Clean code principles and modular design with proper Python project structure are mandatory. The codebase must follow separation of concerns with clear boundaries between UI layer (CLI), business logic (services), and data models. Code must be maintainable, readable, and well-structured.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Spec-Driven Development
+Development must follow a spec-driven workflow using Claude Code and Spec-Kit Plus with no manual coding outside of the specified tools. All generated artifacts must be traceable to specifications and tasks. No ad-hoc development is permitted without proper specification first.
 
-### [PRINCIPLE_6_NAME]
+### VI. Dependency Management
+UV must be used for dependency management and execution. All project dependencies must be managed through UV, with proper pyproject.toml configuration. No other dependency management tools are permitted.
 
+## Additional Constraints
+Technology stack requirements: Python 3.13+ only, Typer for CLI, Rich for formatting, UV for dependencies. No web frameworks, APIs, authentication, databases, or external services are permitted. The system must support a single user and run locally in a terminal environment only.
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+Development must follow Claude Code and Spec-Kit Plus workflows. All changes must be spec-driven with proper traceability. Code review requirements mandate verification of constitution compliance. All artifacts must be linked to specifications and tasks.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+The constitution supersedes all other practices. All pull requests and reviews must verify compliance with these principles. Complexity must be justified with clear reasoning. All generated artifacts must be traceable to specifications and tasks.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.0 | **Ratified**: 2026-01-02 | **Last Amended**: 2026-01-02
